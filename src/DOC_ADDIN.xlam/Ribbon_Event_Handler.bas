@@ -121,7 +121,7 @@ Sub CB34_20200115(control As IRibbonControl)
 End Sub
 
 Sub CB35_20200331(control As IRibbonControl)
-'打开指定工位的指定文件文件夹
+'鎵撳紑鎸囧畾宸ヤ綅鐨勬寚瀹氭枃浠舵枃浠跺す
 open_doc_folder
 End Sub
 
