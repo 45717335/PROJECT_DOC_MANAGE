@@ -34,7 +34,7 @@ Sub ReFresh()
     End If
 
 
-    'ËùÑ¡±í¸ñºÍËùÑ¡ÇøÓò
+    'æ‰€é€‰è¡¨æ ¼å’Œæ‰€é€‰åŒºåŸŸ
     If get_xls_type(ws2, rgselect) = "DOC_TRACK_LIST" Then
         If mokc_tkq.Item("DOC_TRACK_LIST") Is Nothing Then
             para1 = get_para_rg(wb1.ActiveSheet.Range("A1:Z1"), "DOC_TRACK_LIST Root folder:(address in ws eg. A1.../ folder path)", s_def)
@@ -143,7 +143,7 @@ Sub ReFresh()
             DoEvents
         Next
     End If
-    'ËùÑ¡±í¸ñºÍËùÑ¡ÇøÓò
+    'æ‰€é€‰è¡¨æ ¼å’Œæ‰€é€‰åŒºåŸŸ
     Exit Sub
 Error:
     RaiseError Err.Number, MyName, Err.Description
@@ -282,9 +282,9 @@ Sub Doc_Heplp()
 End Sub
 
 Sub open_doc_folder()
-    '´ò¿ªÖ¸¶¨×ÊÁÏÎÄ¼ş¼Ğ
-    '1.ÅĞ¶Ïµ±Ç°wsÊÇ·ñÎªÎÄµµ¹ÜÀí£¬²»ÊÇÔòÍË³ö
-    '2.Ñ¡Ôñµ¥Ôª¸ñ£¬´ò¿ªÎÄ¼ş¼Ğ
+    'æ‰“å¼€æŒ‡å®šèµ„æ–™æ–‡ä»¶å¤¹
+    '1.åˆ¤æ–­å½“å‰wsæ˜¯å¦ä¸ºæ–‡æ¡£ç®¡ç†ï¼Œä¸æ˜¯åˆ™é€€å‡º
+    '2.é€‰æ‹©å•å…ƒæ ¼ï¼Œæ‰“å¼€æ–‡ä»¶å¤¹
     On Error GoTo errorhand
     Dim para1 As String, para2 As String, para3 As String, para4 As String
     Dim str1 As String, str2 As String, str3 As String, str4 As String, str5 As String, str6 As String
@@ -379,7 +379,7 @@ Dim mokc_tree As New OneKeyCls
     End If
 
 
-    'ËùÑ¡±í¸ñºÍËùÑ¡ÇøÓò
+    'æ‰€é€‰è¡¨æ ¼å’Œæ‰€é€‰åŒºåŸŸ
     If get_xls_type(ws2, rgselect) = "DOC_TRACK_LIST" Then
         If mokc_tkq.Item("DOC_TRACK_LIST") Is Nothing Then
             para1 = get_para_rg(wb1.ActiveSheet.Range("A1:Z1"), "DOC_TRACK_LIST Root folder:(address in ws eg. A1.../ folder path)", s_def)
@@ -483,7 +483,7 @@ Dim mokc_tree As New OneKeyCls
             DoEvents
         Next
     End If
-    'ËùÑ¡±í¸ñºÍËùÑ¡ÇøÓò
+    'æ‰€é€‰è¡¨æ ¼å’Œæ‰€é€‰åŒºåŸŸ
   
     
     Dim wb2 As Workbook
