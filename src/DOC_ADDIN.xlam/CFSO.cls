@@ -29,14 +29,14 @@ End Function
 Public Function PickFolder() As String
 
    
-        '** Ê¹ÓÃFileDialog¶ÔÏóÀ´Ñ¡ÔñÎÄ¼ş¼Ğ
+        '** ä½¿ç”¨FileDialogå¯¹è±¡æ¥é€‰æ‹©æ–‡ä»¶å¤¹
         Dim fd As FileDialog
         Dim strPath As String
        
         Set fd = Application.FileDialog(msoFileDialogFolderPicker)
        
-        '** ÏÔÊ¾Ñ¡ÔñÎÄ¼ş¼Ğ¶Ô»°¿ò
-        If fd.Show = -1 Then        '** ÓÃ»§Ñ¡ÔñÁËÎÄ¼ş¼Ğ
+        '** æ˜¾ç¤ºé€‰æ‹©æ–‡ä»¶å¤¹å¯¹è¯æ¡†
+        If fd.Show = -1 Then        '** ç”¨æˆ·é€‰æ‹©äº†æ–‡ä»¶å¤¹
             strPath = fd.SelectedItems(1)
         Else
             strPath = ""
@@ -50,12 +50,12 @@ End Function
    
    
 Private Sub Class_Initialize()
-    '´´½¨Ààºó´´½¨¼¯ºÏ
+    'åˆ›å»ºç±»ååˆ›å»ºé›†åˆ
     Set Fso = CreateObject("Scripting.FileSystemObject")
     
 End Sub
 Private Sub Class_Terminate()
-    'ÀàÖÕÖ¹ºóÆÆ»µ¼¯ºÏ
+    'ç±»ç»ˆæ­¢åç ´åé›†åˆ
     Set Fso = Nothing
 End Sub
 
@@ -192,11 +192,11 @@ errorhand:
 deletefile = False
 End Function
 
-'-----------Sub GetFiles----------Copyright@°Ù¶È²»µ½È¥¹È¸è QQ80871835 2014/3/10---------------------------
-'¹¦ÄÜ :'±éÀúpathÄ¿Â¼,·µ»ØËùÓĞÎÄ¼şÃû»òÕßÎÄ¼ş¼ĞÃûÊı×é,fullname²ÎÊı¿ÉÑ¡ÊÇ·ñ·µ»ØÍêÕûÂ·¾¶
-'±äÁ¿ :path      string  -ÎÄ¼ş¼ĞÂ·¾¶
-'      Fullname  Boolean -ÊÇ·ñ·µ»ØÍêÕûÂ·¾¶,Ä¬ÈÏÎªtrue·µ»ØÍêÕû
-'      ftype     string  -·µ»ØÎÄ¼ş»¹ÊÇÎÄ¼ş¼Ğ,fÎªÎÄ¼ş,foÎªÎÄ¼ş¼Ğ
+'-----------Sub GetFiles----------Copyright@ç™¾åº¦ä¸åˆ°å»è°·æ­Œ QQ80871835 2014/3/10---------------------------
+'åŠŸèƒ½ :'éå†pathç›®å½•,è¿”å›æ‰€æœ‰æ–‡ä»¶åæˆ–è€…æ–‡ä»¶å¤¹åæ•°ç»„,fullnameå‚æ•°å¯é€‰æ˜¯å¦è¿”å›å®Œæ•´è·¯å¾„
+'å˜é‡ :path      string  -æ–‡ä»¶å¤¹è·¯å¾„
+'      Fullname  Boolean -æ˜¯å¦è¿”å›å®Œæ•´è·¯å¾„,é»˜è®¤ä¸ºtrueè¿”å›å®Œæ•´
+'      ftype     string  -è¿”å›æ–‡ä»¶è¿˜æ˜¯æ–‡ä»¶å¤¹,fä¸ºæ–‡ä»¶,foä¸ºæ–‡ä»¶å¤¹
 '--------------------------------------------------------------------------------------------------
 Public Function GetFiles(path$, Optional Fullname As Boolean = True, Optional ftype_f_fo = "f", Optional digui As Boolean = True)
     Dim dic As Object, i&
@@ -207,9 +207,9 @@ Public Function GetFiles(path$, Optional Fullname As Boolean = True, Optional ft
     i = 1
     Call aGetFile(Folder, dic, ftype_f_fo, digui)
     If Fullname Then
-        GetFiles = dic.keys '·µ»ØÎÄ¼şÃû
+        GetFiles = dic.keys 'è¿”å›æ–‡ä»¶å
     Else
-        GetFiles = dic.items '·µ»ØÍêÕûÂ·¾¶´øÎÄ¼şÃû
+        GetFiles = dic.items 'è¿”å›å®Œæ•´è·¯å¾„å¸¦æ–‡ä»¶å
     End If
     Set Folder = Nothing
     Set Fso = Nothing
@@ -221,11 +221,11 @@ Private Function aGetFile(ByVal Folder As Object, dic, Optional ftype = "f", Opt
     If ftype = "fo" Then
         For Each SubFolder In Folder.SubFolders
             dic.Add SubFolder.path, SubFolder.Name
-            If digui Then Call aGetFile(SubFolder, dic, ftype)   'µİ¹éµ÷ÓÃ×ÓÎÄ¼ş¼Ğ
+            If digui Then Call aGetFile(SubFolder, dic, ftype)   'é€’å½’è°ƒç”¨å­æ–‡ä»¶å¤¹
         Next
-    Else '±éÀúÎÄ¼ş
-        For Each File In Folder.Files    '±éÀúÎÄ¼ş
-        'Èç¹û file.path ÖĞÒÑ¾­ °üº¬ ÎÄ¼şÃûÔò ÎŞĞèÔÙ´ÎÌí¼ÓÎÄ¼şÃû
+    Else 'éå†æ–‡ä»¶
+        For Each File In Folder.Files    'éå†æ–‡ä»¶
+        'å¦‚æœ file.path ä¸­å·²ç» åŒ…å« æ–‡ä»¶ååˆ™ æ— éœ€å†æ¬¡æ·»åŠ æ–‡ä»¶å
         
             'dic.Add File.path & "" & File.Name, File.Name
             
@@ -238,7 +238,7 @@ Private Function aGetFile(ByVal Folder As Object, dic, Optional ftype = "f", Opt
             
         Next
         For Each SubFolder In Folder.SubFolders
-            If digui Then Call aGetFile(SubFolder, dic, ftype)     'µİ¹éµ÷ÓÃ×ÓÎÄ¼ş¼Ğ
+            If digui Then Call aGetFile(SubFolder, dic, ftype)     'é€’å½’è°ƒç”¨å­æ–‡ä»¶å¤¹
         Next
     End If
 End Function
