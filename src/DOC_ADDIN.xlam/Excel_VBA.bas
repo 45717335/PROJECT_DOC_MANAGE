@@ -88,7 +88,7 @@ End Function
 
 Function open_wb2(ByRef wb As Workbook, ByVal flfp As String) As Boolean
 '==========================================================
-'在新窗口中打开 workbook
+'鍦ㄦ柊绐楀彛涓墦寮� workbook
 '==========================================================
 open_wb2 = False
 
@@ -131,7 +131,7 @@ End Function
 
 Function Close_wb2(ByRef wb As Workbook) As Boolean
 '==========================================================
-'在新窗口中打开 workbook
+'鍦ㄦ柊绐楀彛涓墦寮� workbook
 '==========================================================
 On Error GoTo errorhand
 Dim app As Object
