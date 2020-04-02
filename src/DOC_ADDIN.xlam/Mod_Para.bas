@@ -1,7 +1,7 @@
 Attribute VB_Name = "Mod_Para"
 Option Explicit
 Function write_para(wb As Workbook, comment As String, Optional para_v As String = "") As String
-    '在SETTING工作表A列中找备注为所给备注的单元格，要求输入
+    '鍦⊿ETTING宸ヤ綔琛ˋ鍒椾腑鎵惧娉ㄤ负鎵�缁欏娉ㄧ殑鍗曞厓鏍硷紝瑕佹眰杈撳叆
     Dim ws As Worksheet, str1 As String
     Set ws = get_ws(wb, "SETTING")
     Dim i As Integer, i_last As Integer
