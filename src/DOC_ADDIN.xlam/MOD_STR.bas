@@ -2,11 +2,11 @@ Attribute VB_Name = "MOD_STR"
 Option Explicit
 
 Function P_SPLIT(ByVal txtRange, ByVal splitter As String, Optional ByVal get_index As Integer = 0)
-'²ğ·Ö×Ö·û´®£¬
-'get_index=0    Ôò·µ»Ø±»²ğ·Ö³öÀ´µÄµÚÒ»¸ö×Ö·û´®
-'get_index=1£¬2£¬3    Ôò·µ»Ø±»²ğ·Ö³öÀ´µÄµÚ¶ş¡¢Èı¡¢ËÄ¸ö×Ö·û´«
-'get_index=-1£¬-2£¬-3    Ôò·µ»Ø±»²ğ·Ö³öÀ´µÄµ¹ÊıµÚÒ»¡¢¶ş¡¢Èı¸ö×Ö·û´«
-'Ô½½ç·µ»Ø ""
+'æ‹†åˆ†å­—ç¬¦ä¸²ï¼Œ
+'get_index=0    åˆ™è¿”å›è¢«æ‹†åˆ†å‡ºæ¥çš„ç¬¬ä¸€ä¸ªå­—ç¬¦ä¸²
+'get_index=1ï¼Œ2ï¼Œ3    åˆ™è¿”å›è¢«æ‹†åˆ†å‡ºæ¥çš„ç¬¬äºŒã€ä¸‰ã€å››ä¸ªå­—ç¬¦ä¼ 
+'get_index=-1ï¼Œ-2ï¼Œ-3    åˆ™è¿”å›è¢«æ‹†åˆ†å‡ºæ¥çš„å€’æ•°ç¬¬ä¸€ã€äºŒã€ä¸‰ä¸ªå­—ç¬¦ä¼ 
+'è¶Šç•Œè¿”å› ""
     Dim a As Variant
     Dim b As Variant
     Dim c As Variant
